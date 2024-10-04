@@ -1,10 +1,10 @@
 package org.deeppowercrew.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 import java.util.List;
@@ -13,6 +13,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "landmark")
 public class Landmark {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +33,13 @@ public class Landmark {
     @JoinColumn(name = "locality_id")
     private Locality locality;
 
-    @OneToMany(mappedBy = "attraction", cascade = CascadeType.ALL)
+    // Рекурсивная связь: родительский объект Landmark
+    @ManyToOne
+    @JoinColumn(name = "parent_landmark_id")
+    private Landmark parentLandmark;
+
+    // Список дочерних объектов Landmark
+    @OneToMany(mappedBy = "parentLandmark", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Landmark> landmarkList;
 }

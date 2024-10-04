@@ -9,15 +9,14 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-boot.version>3.0.6</spring-boot.version>
+        <spring-boot.version>3.3.4</spring-boot.version>
         <lombok.version>1.18.26</lombok.version>
         <postgresql.version>42.3.1</postgresql.version>
-        <liquibase.version>4.17.2</liquibase.version>
+        <liquibase.version>4.17.2</liquibase.version> <!-- Синхронизируем версии -->
     </properties>
-
 
     <dependencies>
         <!-- Spring Boot Web -->
@@ -41,7 +40,7 @@
             <version>${postgresql.version}</version>
         </dependency>
 
-        <!-- Lombok -->
+        <!-- Lombok (удалены повторяющиеся зависимости) -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -79,24 +78,6 @@
             <version>${spring-boot.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -104,8 +85,23 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>4.17.2</version>
+                <configuration>
+                    <propertyFile>src/main/resources/liquibase.properties</propertyFile>
+                    <changeLogFile>src/main/resources/db/changelog/db.changelog-master.yaml</changeLogFile>
+                    <url>jdbc:postgresql://localhost:5432/landmark</url>
+                    <username>postgres</username>
+                    <password>my_@_password</password>
+                    <driver>org.postgresql.Driver</driver>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>
+
+
