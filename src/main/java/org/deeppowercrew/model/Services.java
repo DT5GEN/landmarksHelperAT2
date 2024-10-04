@@ -4,13 +4,13 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "services")
 public class Services {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +24,8 @@ public class Services {
     private String provider;
 
     @ManyToOne
-    @JoinColumn(name = "attraction_id")
+    @JoinColumn(name = "landmark_id")
     private Landmark landmark;
 }
+
+

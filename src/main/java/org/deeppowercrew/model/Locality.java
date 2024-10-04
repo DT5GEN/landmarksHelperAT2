@@ -1,15 +1,9 @@
 package org.deeppowercrew.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-
 
 import java.util.List;
 
@@ -17,7 +11,9 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "locality")
 public class Locality {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
