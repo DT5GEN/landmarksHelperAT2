@@ -20,7 +20,7 @@ public class Services {
     private ServiceType type;
 
     private String description;
-
+    private String name;
     private String provider;
 
     @ManyToOne
