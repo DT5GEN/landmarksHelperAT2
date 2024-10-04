@@ -1,12 +1,14 @@
 package org.deeppowercrew.controller;
 
+import org.deeppowercrew.dtos.ServicesDTO;
 import org.deeppowercrew.model.Services;
 import org.deeppowercrew.service.ServicesService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/services")
+@RequestMapping("/api")
 public class ServicesController {
 
     private final ServicesService servicesService;
@@ -15,14 +17,18 @@ public class ServicesController {
         this.servicesService = servicesService;
     }
 
-    @PostMapping
-    public Services addServices(@RequestBody Services services) {
-        return servicesService.addServices(services);
+    @GetMapping("/services")
+    public List<ServicesDTO> getAllServices() {
+        return servicesService.getAllServices()
+                .stream()
+                .map(servicesService::convertToDTO)
+                .collect(Collectors.toList());
     }
 
-    @GetMapping
-    public List<Services> getAllServices() {
-        return servicesService.getAllServices();
+    @PostMapping("/service")
+    public ServicesDTO addService(@RequestBody ServicesDTO serviceDTO) {
+        Services service = servicesService.convertFromDTO(serviceDTO);
+        return servicesService.convertToDTO(servicesService.addServices(service));
     }
 
     @GetMapping("/{id}")
