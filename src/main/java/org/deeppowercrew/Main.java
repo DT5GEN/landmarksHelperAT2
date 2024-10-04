@@ -1,4 +1,4 @@
-package org.deeppowercrew.startpoint;
+package org.deeppowercrew;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

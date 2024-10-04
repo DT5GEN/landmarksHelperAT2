@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/landmarks")
+@RequestMapping("/api")
 public class LandmarkController {
 
     private final LandmarkService landmarkService;
@@ -16,12 +16,12 @@ public class LandmarkController {
         this.landmarkService = landmarkService;
     }
 
-    @PostMapping("/landmarks")
+    @PostMapping("/landmark")
     public Landmark addLandmark(@RequestBody Landmark landmark) {
         return landmarkService.addLandmark(landmark);
     }
 
-    @GetMapping
+    @GetMapping("/landmark")
     public List<Landmark> getAllLandmarks() {
         return landmarkService.getAllLandmarks();
     }
