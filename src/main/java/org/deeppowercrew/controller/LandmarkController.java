@@ -1,10 +1,12 @@
 package org.deeppowercrew.controller;
 
+import org.deeppowercrew.dtos.LandmarkDTO;
 import org.deeppowercrew.model.Landmark;
 import org.deeppowercrew.service.LandmarkService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -22,10 +24,12 @@ public class LandmarkController {
     }
 
     @GetMapping("/landmark")
-    public List<Landmark> getAllLandmarks() {
-        return landmarkService.getAllLandmarks();
+    public List<LandmarkDTO> getAllLandmarks() {
+        return landmarkService.getAllLandmarks()
+                .stream()
+                .map(landmarkService::convertToDTO)
+                .collect(Collectors.toList());
     }
-
     @GetMapping("/{id}")
     public Landmark getLandmarkById(@PathVariable Long id) {
         return landmarkService.getLandmarkById(id)

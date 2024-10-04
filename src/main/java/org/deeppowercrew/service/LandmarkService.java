@@ -1,6 +1,9 @@
 package org.deeppowercrew.service;
 
+import org.deeppowercrew.dtos.LandmarkDTO;
+import org.deeppowercrew.dtos.LocalityDTO;
 import org.deeppowercrew.model.Landmark;
+import org.deeppowercrew.model.Locality;
 import org.deeppowercrew.repository.LandmarkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,5 +51,27 @@ public class LandmarkService {
     // Метод для удаления достопримечательности
     public void deleteLandmark(Long id) {
         landmarkRepository.deleteById(id);
+    }
+
+    public LandmarkDTO convertToDTO(Landmark landmark) {
+        LandmarkDTO dto = new LandmarkDTO();
+        dto.setId(landmark.getId());
+        dto.setName(landmark.getName());
+        dto.setDescription(landmark.getDescription());
+        dto.setCreationDate(landmark.getCreationDate().toString());
+        dto.setType(landmark.getType() != null ? landmark.getType().name() : null);
+        dto.setLocality(landmark.getLocality() != null ? convertLocalityToDTO(landmark.getLocality()) : null);
+        dto.setParentLandmark(landmark.getParentLandmark() != null ? convertToDTO(landmark.getParentLandmark()) : null);
+        return dto;
+    }
+
+    private LocalityDTO convertLocalityToDTO(Locality locality) {
+        LocalityDTO dto = new LocalityDTO();
+        dto.setId(locality.getId());
+        dto.setCity(locality.getCity());
+        dto.setRegion(locality.getRegion());
+        dto.setLatitude(locality.getLatitude());
+        dto.setLongitude(locality.getLongitude());
+        return dto;
     }
 }
