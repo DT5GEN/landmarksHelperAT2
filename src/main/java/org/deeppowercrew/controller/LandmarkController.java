@@ -30,18 +30,18 @@ public class LandmarkController {
                 .map(landmarkService::convertToDTO)
                 .collect(Collectors.toList());
     }
-    @GetMapping("/{id}")
+    @GetMapping("/landmark/{id}")
     public Landmark getLandmarkById(@PathVariable Long id) {
         return landmarkService.getLandmarkById(id)
                 .orElseThrow(() -> new RuntimeException("Landmark not found"));
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/landmark/{id}")
     public Landmark updateLandmark(@PathVariable Long id, @RequestBody Landmark landmark) {
         return landmarkService.updateLandmark(id, landmark);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/landmark/{id}")
     public void deleteLandmark(@PathVariable Long id) {
         landmarkService.deleteLandmark(id);
     }

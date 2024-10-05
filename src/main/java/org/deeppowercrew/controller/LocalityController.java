@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/localities")
+@RequestMapping("/api")
 public class LocalityController {
 
     private final LocalityService localityService;
@@ -15,27 +15,27 @@ public class LocalityController {
         this.localityService = localityService;
     }
 
-    @PostMapping
+    @PostMapping("/localities")
     public Locality addLocality(@RequestBody Locality locality) {
         return localityService.addLocality(locality);
     }
 
-    @GetMapping
+    @GetMapping("/localities")
     public List<Locality> getAllLocalities() {
         return localityService.getAllLocalities();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/locality/{id}")
     public Locality getLocalityById(@PathVariable Long id) {
         return localityService.getLocalityById(id).orElseThrow(() -> new RuntimeException("Locality not found"));
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/locality/{id}")
     public Locality updateLocality(@PathVariable Long id, @RequestBody Locality locality) {
         return localityService.updateLocality(id, locality);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/locality/{id}")
     public void deleteLocality(@PathVariable Long id) {
         localityService.deleteLocality(id);
     }

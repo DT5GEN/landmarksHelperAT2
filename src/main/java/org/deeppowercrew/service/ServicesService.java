@@ -1,5 +1,7 @@
 package org.deeppowercrew.service;
 
+import org.deeppowercrew.dtos.ServicesDTO;
+import org.deeppowercrew.model.ServiceType;
 import org.deeppowercrew.model.Services;
 import org.deeppowercrew.repository.ServicesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,4 +51,25 @@ public class ServicesService {
     public void deleteServices(Long id) {
         servicesRepository.deleteById(id);
     }
+
+    public ServicesDTO convertToDTO(Services service) {
+        ServicesDTO dto = new ServicesDTO();
+        dto.setId(service.getId());
+        dto.setName(service.getName());
+        dto.setDescription(service.getDescription());
+        dto.setProvider(service.getProvider());
+        dto.setType(service.getType().toString());
+        return dto;
+    }
+
+    public Services convertFromDTO(ServicesDTO serviceDTO) {
+        Services service = new Services();
+        service.setName(serviceDTO.getName());
+        service.setDescription(serviceDTO.getDescription());
+        service.setProvider(serviceDTO.getProvider());
+        service.setType(ServiceType.valueOf(serviceDTO.getType()));
+        return service;
+    }
+
+
 }
