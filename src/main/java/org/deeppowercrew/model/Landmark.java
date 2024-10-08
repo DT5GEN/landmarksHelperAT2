@@ -21,6 +21,8 @@ public class Landmark {
 
     private String name;
 
+    private int rating;
+
     @Temporal(TemporalType.DATE)
     private Date creationDate;
 

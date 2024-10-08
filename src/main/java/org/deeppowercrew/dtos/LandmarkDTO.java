@@ -13,4 +13,5 @@ public class LandmarkDTO {
     private String type;
     private LocalityDTO locality;
     private LandmarkDTO parentLandmark;
+    private int rating;
 }

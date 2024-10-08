@@ -71,3 +71,14 @@ databaseChangeLog:
               - column:
                   name: creation_date
                   value: "1886-10-28"
+
+  - changeSet:
+      id: add-rating-to-landmark
+      author: your_name
+      changes:
+        - addColumn:
+            tableName: landmark
+            columns:
+              - column:
+                  name: rating
+                  type: BIGINT
