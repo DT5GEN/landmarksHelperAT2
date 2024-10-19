@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/landmarks")
+
 public class LandmarkController {
 
     private final LandmarkService landmarkService;
@@ -18,30 +19,35 @@ public class LandmarkController {
         this.landmarkService = landmarkService;
     }
 
-    @PostMapping("/landmark")
-    public Landmark addLandmark(@RequestBody Landmark landmark) {
-        return landmarkService.addLandmark(landmark);
+    @PostMapping
+    public LandmarkDTO addLandmark(@RequestBody LandmarkDTO landmarkDTO) {
+        Landmark landmark = landmarkService.convertToEntity(landmarkDTO);
+        Landmark savedLandmark = landmarkService.addLandmark(landmark);
+        return landmarkService.convertToDTO(savedLandmark);
     }
 
-    @GetMapping("/landmark")
+    @GetMapping
     public List<LandmarkDTO> getAllLandmarks() {
-        return landmarkService.getAllLandmarks()
-                .stream()
+        return landmarkService.getAllLandmarks().stream()
                 .map(landmarkService::convertToDTO)
                 .collect(Collectors.toList());
     }
-    @GetMapping("/landmark/{id}")
-    public Landmark getLandmarkById(@PathVariable Long id) {
-        return landmarkService.getLandmarkById(id)
+
+    @GetMapping("/{id}")
+    public LandmarkDTO getLandmarkById(@PathVariable Long id) {
+        Landmark landmark = landmarkService.getLandmarkById(id)
                 .orElseThrow(() -> new RuntimeException("Landmark not found"));
+        return landmarkService.convertToDTO(landmark);
     }
 
-    @PutMapping("/landmark/{id}")
-    public Landmark updateLandmark(@PathVariable Long id, @RequestBody Landmark landmark) {
-        return landmarkService.updateLandmark(id, landmark);
+    @PutMapping("/{id}")
+    public LandmarkDTO updateLandmark(@PathVariable Long id, @RequestBody LandmarkDTO landmarkDTO) {
+        Landmark landmark = landmarkService.convertToEntity(landmarkDTO);
+        Landmark updatedLandmark = landmarkService.updateLandmark(id, landmark);
+        return landmarkService.convertToDTO(updatedLandmark);
     }
 
-    @DeleteMapping("/landmark/{id}")
+    @DeleteMapping("/{id}")
     public void deleteLandmark(@PathVariable Long id) {
         landmarkService.deleteLandmark(id);
     }
