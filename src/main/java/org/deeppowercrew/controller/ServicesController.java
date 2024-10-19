@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/services")
 public class ServicesController {
 
     private final ServicesService servicesService;
@@ -17,32 +18,29 @@ public class ServicesController {
         this.servicesService = servicesService;
     }
 
-    @GetMapping("/services")
+    @PostMapping
+    public ServicesDTO addService(@RequestBody ServicesDTO servicesDTO) {
+        Services service = servicesService.convertToEntity(servicesDTO);
+        Services savedService = servicesService.addService(service);
+        return servicesService.convertToDTO(savedService);
+    }
+
+    @GetMapping
     public List<ServicesDTO> getAllServices() {
-        return servicesService.getAllServices()
-                .stream()
+        return servicesService.getAllServices().stream()
                 .map(servicesService::convertToDTO)
                 .collect(Collectors.toList());
     }
 
-    @PostMapping("/service")
-    public ServicesDTO addService(@RequestBody ServicesDTO serviceDTO) {
-        Services service = servicesService.convertFromDTO(serviceDTO);
-        return servicesService.convertToDTO(servicesService.addServices(service));
-    }
-
-    @GetMapping("/{id}")
-    public Services getServicesById(@PathVariable Long id) {
-        return servicesService.getServicesById(id).orElseThrow(() -> new RuntimeException("Services not found"));
-    }
-
     @PutMapping("/{id}")
-    public Services updateServices(@PathVariable Long id, @RequestBody Services services) {
-        return servicesService.updateServices(id, services);
+    public ServicesDTO updateService(@PathVariable Long id, @RequestBody ServicesDTO servicesDTO) {
+        Services service = servicesService.convertToEntity(servicesDTO);
+        Services updatedService = servicesService.updateService(id, service);
+        return servicesService.convertToDTO(updatedService);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteServices(@PathVariable Long id) {
-        servicesService.deleteServices(id);
+    public void deleteService(@PathVariable Long id) {
+        servicesService.deleteService(id);
     }
 }
