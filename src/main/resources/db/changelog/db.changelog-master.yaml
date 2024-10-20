@@ -1,161 +1,104 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
-      author: admin
-      changes:
-        - createTable:
-            tableName: landmark
-            columns:
-              - column:
-                  name: id
-                  type: BIGINT
-                  autoIncrement: true
-                  constraints:
-                    primaryKey: true
-                    nullable: false
-              - column:
-                  name: name
-                  type: VARCHAR(255)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: description
-                  type: TEXT
-              - column:
-                  name: creation_date
-                  type: DATE
-              - column:
-                  name: type
-                  type: VARCHAR(100)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: locality
-                  type: VARCHAR(100)
-              - column:
-                  name: rating
-                  type: FLOAT
-
-  - changeSet:
-      id: 2
+      id: 5
       author: admin
       changes:
         - insert:
-            tableName: landmark
+            tableName: service_landmarks
             columns:
-              - column: { name: name, value: "Eiffel Tower" }
-              - column: { name: description, value: "Famous tower in Paris" }
-              - column: { name: creation_date, valueDate: "1889-03-31" }
-              - column: { name: type, value: "HISTORICAL" }
-              - column: { name: locality, value: "Paris" }
-              - column: { name: rating, valueNumeric: 4.8 }
+              - column:
+                  name: service_id
+                  valueNumeric: 4  # Обновлено на правильный ID
+              - column:
+                  name: landmark_id
+                  valueNumeric: 1
 
         - insert:
-            tableName: landmark
+            tableName: service_landmarks
             columns:
-              - column: { name: name, value: "Statue of Liberty" }
-              - column: { name: description, value: "Iconic statue in New York City" }
-              - column: { name: creation_date, valueDate: "1886-10-28" }
-              - column: { name: type, value: "MONUMENT" }
-              - column: { name: locality, value: "New York" }
-              - column: { name: rating, valueNumeric: 4.7 }
+              - column:
+                  name: service_id
+                  valueNumeric: 5
+              - column:
+                  name: landmark_id
+                  valueNumeric: 3
 
         - insert:
-            tableName: landmark
+            tableName: service_landmarks
             columns:
-              - column: { name: name, value: "Great Wall of China" }
-              - column: { name: description, value: "Ancient wall in China" }
-              - column: { name: creation_date, valueDate: "0700-01-01" }
-              - column: { name: type, value: "HISTORICAL" }
-              - column: { name: locality, value: "China" }
-              - column: { name: rating, valueNumeric: 4.9 }
+              - column:
+                  name: service_id
+                  valueNumeric: 6
+              - column:
+                  name: landmark_id
+                  valueNumeric: 5
 
         - insert:
-            tableName: landmark
+            tableName: service_landmarks
             columns:
-              - column: { name: name, value: "Machu Picchu" }
-              - column: { name: description, value: "Ancient city in Peru" }
-              - column: { name: creation_date, valueDate: "1450-01-01" }
-              - column: { name: type, value: "HISTORICAL" }
-              - column: { name: locality, value: "Peru" }
-              - column: { name: rating, valueNumeric: 4.8 }
+              - column:
+                  name: service_id
+                  valueNumeric: 7
+              - column:
+                  name: landmark_id
+                  valueNumeric: 7
 
         - insert:
-            tableName: landmark
+            tableName: service_landmarks
             columns:
-              - column: { name: name, value: "Taj Mahal" }
-              - column: { name: description, value: "White marble mausoleum in India" }
-              - column: { name: creation_date, valueDate: "1632-01-01" }
-              - column: { name: type, value: "MONUMENT" }
-              - column: { name: locality, value: "Agra" }
-              - column: { name: rating, valueNumeric: 4.9 }
+              - column:
+                  name: service_id
+                  valueNumeric: 8
+              - column:
+                  name: landmark_id
+                  valueNumeric: 9
 
         - insert:
-            tableName: landmark
+            tableName: service_landmarks
             columns:
-              - column: { name: name, value: "Christ the Redeemer" }
-              - column: { name: description, value: "Statue in Rio de Janeiro" }
-              - column: { name: creation_date, valueDate: "1931-10-12" }
-              - column: { name: type, value: "MONUMENT" }
-              - column: { name: locality, value: "Rio de Janeiro" }
-              - column: { name: rating, valueNumeric: 4.7 }
+              - column:
+                  name: service_id
+                  valueNumeric: 9
+              - column:
+                  name: landmark_id
+                  valueNumeric: 11
 
         - insert:
-            tableName: landmark
+            tableName: service_landmarks
             columns:
-              - column: { name: name, value: "Colosseum" }
-              - column: { name: description, value: "Ancient amphitheater in Rome" }
-              - column: { name: creation_date, valueDate: "0080-01-01" }
-              - column: { name: type, value: "HISTORICAL" }
-              - column: { name: locality, value: "Rome" }
-              - column: { name: rating, valueNumeric: 4.8 }
+              - column:
+                  name: service_id
+                  valueNumeric: 10
+              - column:
+                  name: landmark_id
+                  valueNumeric: 2
 
         - insert:
-            tableName: landmark
+            tableName: service_landmarks
             columns:
-              - column: { name: name, value: "Angkor Wat" }
-              - column: { name: description, value: "Temple complex in Cambodia" }
-              - column: { name: creation_date, valueDate: "1113-01-01" }
-              - column: { name: type, value: "TEMPLE" }
-              - column: { name: locality, value: "Cambodia" }
-              - column: { name: rating, valueNumeric: 4.7 }
+              - column:
+                  name: service_id
+                  valueNumeric: 11
+              - column:
+                  name: landmark_id
+                  valueNumeric: 4
 
         - insert:
-            tableName: landmark
+            tableName: service_landmarks
             columns:
-              - column: { name: name, value: "Petra" }
-              - column: { name: description, value: "Ancient city in Jordan" }
-              - column: { name: creation_date, valueDate: "0312-01-01" }
-              - column: { name: type, value: "HISTORICAL" }
-              - column: { name: locality, value: "Jordan" }
-              - column: { name: rating, valueNumeric: 4.6 }
+              - column:
+                  name: service_id
+                  valueNumeric: 12
+              - column:
+                  name: landmark_id
+                  valueNumeric: 6
 
         - insert:
-            tableName: landmark
+            tableName: service_landmarks
             columns:
-              - column: { name: name, value: "Acropolis of Athens" }
-              - column: { name: description, value: "Ancient citadel in Greece" }
-              - column: { name: creation_date, valueDate: "0447-01-01" }
-              - column: { name: type, value: "HISTORICAL" }
-              - column: { name: locality, value: "Athens" }
-              - column: { name: rating, valueNumeric: 4.7 }
-
-        - insert:
-            tableName: landmark
-            columns:
-              - column: { name: name, value: "Mount Fuji" }
-              - column: { name: description, value: "Mountain in Japan" }
-              - column: { name: creation_date, valueDate: "1707-01-01" }
-              - column: { name: type, value: "NATURAL" }
-              - column: { name: locality, value: "Japan" }
-              - column: { name: rating, valueNumeric: 4.8 }
-
-        - insert:
-            tableName: landmark
-            columns:
-              - column: { name: name, value: "Sagrada Familia" }
-              - column: { name: description, value: "Basilica in Barcelona" }
-              - column: { name: creation_date, valueDate: "1882-01-01" }
-              - column: { name: type, value: "RELIGIOUS" }
-              - column: { name: locality, value: "Barcelona" }
-              - column: { name: rating, valueNumeric: 4.9 }
+              - column:
+                  name: service_id
+                  valueNumeric: 13
+              - column:
+                  name: landmark_id
+                  valueNumeric: 8

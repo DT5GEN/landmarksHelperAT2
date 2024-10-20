@@ -1,57 +1,71 @@
 package org.deeppowercrew.service;
 
+import lombok.RequiredArgsConstructor;
 import org.deeppowercrew.dtos.ServicesDTO;
+import org.deeppowercrew.model.Landmark;
+import org.deeppowercrew.model.ServiceType;
 import org.deeppowercrew.model.Services;
+import org.deeppowercrew.repository.LandmarkRepository;
 import org.deeppowercrew.repository.ServicesRepository;
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class ServicesService {
 
     private final ServicesRepository servicesRepository;
-    private final ModelMapper modelMapper;
+    private final LandmarkRepository landmarkRepository;
 
-    public ServicesService(ServicesRepository servicesRepository, ModelMapper modelMapper) {
-        this.servicesRepository = servicesRepository;
-        this.modelMapper = modelMapper;
+    public ServicesDTO addService(ServicesDTO dto) {
+        Services service = convertToEntity(dto);
+        Services savedService = servicesRepository.save(service);
+        return convertToDTO(savedService);
+    }
+    @Transactional(readOnly = true)
+    public List<ServicesDTO> getAllServices() {
+        return servicesRepository.findAll().stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
     }
 
-    public Services addService(Services service) {
-        return servicesRepository.save(service);
-    }
-
-    public List<Services> getAllServices() {
-        return servicesRepository.findAll();
-    }
-
-    public Optional<Services> getServiceById(Long id) {
-        return servicesRepository.findById(id);
-    }
-
-    public Services updateService(Long id, Services updatedService) {
-        Optional<Services> existingService = servicesRepository.findById(id);
-        if (existingService.isPresent()) {
-            updatedService.setId(id);
-            return servicesRepository.save(updatedService);
-        } else {
-            throw new RuntimeException("Service not found");
-        }
+    public ServicesDTO updateService(Long id, ServicesDTO dto) {
+        Services service = servicesRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Service not found"));
+        service.setType(ServiceType.valueOf(dto.getType()));
+        service.setDescription(dto.getDescription());
+        service.setPerformer(dto.getPerformer());
+        service.setLandmarks(landmarkRepository.findAllById(dto.getLandmarkIds()));
+        return convertToDTO(servicesRepository.save(service));
     }
 
     public void deleteService(Long id) {
         servicesRepository.deleteById(id);
     }
 
-    public Services convertToEntity(ServicesDTO servicesDTO) {
-        return modelMapper.map(servicesDTO, Services.class);
+    private ServicesDTO convertToDTO(Services service) {
+        List<Long> landmarkIds = service.getLandmarks().stream()
+                .map(Landmark::getId)
+                .collect(Collectors.toList());
+        return ServicesDTO.builder()
+                .id(service.getId())
+                .type(service.getType().name())
+                .description(service.getDescription())
+                .performer(service.getPerformer())
+                .landmarkIds(landmarkIds)
+                .build();
     }
 
-    public ServicesDTO convertToDTO(Services service) {
-        return modelMapper.map(service, ServicesDTO.class);
+    private Services convertToEntity(ServicesDTO dto) {
+        List<Landmark> landmarks = landmarkRepository.findAllById(dto.getLandmarkIds());
+        return Services.builder()
+                .type(ServiceType.valueOf(dto.getType()))
+                .description(dto.getDescription())
+                .performer(dto.getPerformer())
+                .landmarks(landmarks)
+                .build();
     }
 }
