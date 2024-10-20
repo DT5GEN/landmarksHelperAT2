@@ -3,6 +3,7 @@ package org.deeppowercrew.controller;
 import org.deeppowercrew.model.Locality;
 import org.deeppowercrew.service.LocalityService;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController

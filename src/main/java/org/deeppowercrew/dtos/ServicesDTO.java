@@ -1,14 +1,21 @@
 package org.deeppowercrew.dtos;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
-@Setter
+import java.util.List;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ServicesDTO {
+
     private Long id;
-    private String name;
-    private String description;
-    private String provider;
     private String type;
+    private String description;
+    private String performer;
+    private List<Long> landmarkIds;
 }
