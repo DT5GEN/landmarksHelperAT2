@@ -11,6 +11,6 @@ public class LandmarkDTO {
     private String description;
     private String creationDate;
     private String type;
-    private LocalityDTO locality;
+    private org.deeppowercrew.dtos.LocalityDTO locality;
     private LandmarkDTO parentLandmark;
 }

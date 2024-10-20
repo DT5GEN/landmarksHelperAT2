@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0a13316b-626c-49f6-b22f-26be2f4d2b3e" name="Changes" comment="update Landmark in DB">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landmarksHelper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/deeppowercrew/controller/LocalityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/deeppowercrew/controller/LocalityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/deeppowercrew/dtos/LandmarkDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/deeppowercrew/dtos/LandmarkDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/deeppowercrew/dtos/LocalityDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/deeppowercrew/dtos/LocalityDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/deeppowercrew/model/Locality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/deeppowercrew/model/Locality.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/deeppowercrew/repository/LocalityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/deeppowercrew/repository/LocalityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/deeppowercrew/service/LocalityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/deeppowercrew/service/LocalityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DT5GEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DT5GEN/landmarksHelperAT2.git&quot;,
+    &quot;accountId&quot;: &quot;0529dbf3-fc08-4492-a4a8-4efb38126cfc&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2mzVEJsKxsYkQglxDfmXmZTTn8K" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.Main.executor": "Run",
+    "git-widget-placeholder": "work-with-DB",
+    "ignore.preview.features.used": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="landmarksHelper" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.deeppowercrew.Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0a13316b-626c-49f6-b22f-26be2f4d2b3e" name="Changes" comment="" />
+      <created>1728079278456</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1728079278456</updated>
+      <workItem from="1728635917219" duration="316000" />
+      <workItem from="1729342858172" duration="4403000" />
+      <workItem from="1729350423456" duration="2114000" />
+      <workItem from="1729352565545" duration="800000" />
+      <workItem from="1729353384064" duration="317000" />
+      <workItem from="1729353807227" duration="5058000" />
+      <workItem from="1729370323186" duration="7613000" />
+      <workItem from="1729436072062" duration="12748000" />
+    </task>
+    <task id="LOCAL-00001" summary="last update">
+      <option name="closed" value="true" />
+      <created>1729344074099</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729344074099</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add SpringDoc OpenAPI UI">
+      <option name="closed" value="true" />
+      <created>1729371734659</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729371734659</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update LandmarkType">
+      <option name="closed" value="true" />
+      <created>1729379248022</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729379248022</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update Landmark in DB">
+      <option name="closed" value="true" />
+      <created>1729461846655</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729461846655</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="last update" />
+    <MESSAGE value="add SpringDoc OpenAPI UI" />
+    <MESSAGE value="update LandmarkType" />
+    <MESSAGE value="update Landmark in DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Landmark in DB" />
+  </component>
+</project>

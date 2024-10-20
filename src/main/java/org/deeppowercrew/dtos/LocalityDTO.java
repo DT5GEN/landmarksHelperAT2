@@ -1,14 +1,23 @@
 package org.deeppowercrew.dtos;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Builder;
+import java.util.List;
 
-@Setter
-@Getter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+
+
+
 public class LocalityDTO {
     private Long id;
-    private String city;
-    private String region;
+    private String name;
+    private String description;
     private Double latitude;
     private Double longitude;
+    private List<Long> landmarkIds;
 }
