@@ -1,5 +1,5 @@
 package org.deeppowercrew.model;
 
 public enum LandmarkType {
-    PALACE, PARK, MUSEUM, ARCHAEOLOGICAL_SITE, NATURE_RESERVE
+    RELIGIOUS, PARK, MUSEUM, NATURAL, MONUMENT, HISTORICAL
 }

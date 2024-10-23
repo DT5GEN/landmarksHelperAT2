@@ -20,12 +20,9 @@ public class Locality {
 
     private String city;
 
-    private String region;
+    private String country;
 
-    private Double latitude;
-
-    private Double longitude;
 
     @OneToMany(mappedBy = "locality", cascade = CascadeType.ALL)
-    private List<Landmark> attractions;
+    private List<Landmark> landmarks;
 }

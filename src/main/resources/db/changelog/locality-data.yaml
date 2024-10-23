@@ -1,0 +1,155 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: admin
+      changes:
+        - insert:
+            tableName: locality
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: city
+                  value: "Tokyo"
+              - column:
+                  name: country
+                  value: "Japan"
+              - column:
+                  name: description
+                  value: "Capital city with rich history and modernity."
+        - insert:
+            tableName: locality
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: city
+                  value: "Paris"
+              - column:
+                  name: country
+                  value: "France"
+              - column:
+                  name: description
+                  value: "Known for the Eiffel Tower and art museums."
+        - insert:
+            tableName: locality
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 3
+              - column:
+                  name: city
+                  value: "New York"
+              - column:
+                  name: country
+                  value: "USA"
+              - column:
+                  name: description
+                  value: "Famous for Times Square and Statue of Liberty."
+        - insert:
+            tableName: locality
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 4
+              - column:
+                  name: city
+                  value: "Rio de Janeiro"
+              - column:
+                  name: country
+                  value: "Brazil"
+              - column:
+                  name: description
+                  value: "Famous for Christ the Redeemer statue."
+        - insert:
+            tableName: locality
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 5
+              - column:
+                  name: city
+                  value: "Beijing"
+              - column:
+                  name: country
+                  value: "China"
+              - column:
+                  name: description
+                  value: "Capital city, home to the Great Wall."
+        - insert:
+            tableName: locality
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 6
+              - column:
+                  name: city
+                  value: "Rome"
+              - column:
+                  name: country
+                  value: "Italy"
+              - column:
+                  name: description
+                  value: "Known for the Colosseum."
+        - insert:
+            tableName: locality
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 7
+              - column:
+                  name: city
+                  value: "Cairo"
+              - column:
+                  name: country
+                  value: "Egypt"
+              - column:
+                  name: description
+                  value: "Home to the pyramids and ancient culture."
+        - insert:
+            tableName: locality
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 8
+              - column:
+                  name: city
+                  value: "Sydney"
+              - column:
+                  name: country
+                  value: "Australia"
+              - column:
+                  name: description
+                  value: "Known for the Opera House."
+        - insert:
+            tableName: locality
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 9
+              - column:
+                  name: city
+                  value: "Moscow"
+              - column:
+                  name: country
+                  value: "Russia"
+              - column:
+                  name: description
+                  value: "Famous for Red Square and the Kremlin."
+        - insert:
+            tableName: locality
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 10
+              - column:
+                  name: city
+                  value: "Athens"
+              - column:
+                  name: country
+                  value: "Greece"
+              - column:
+                  name: description
+                  value: "Historical city, home to the Acropolis."

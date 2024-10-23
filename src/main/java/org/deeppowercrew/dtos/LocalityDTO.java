@@ -8,7 +8,6 @@ import lombok.Setter;
 public class LocalityDTO {
     private Long id;
     private String city;
-    private String region;
-    private Double latitude;
-    private Double longitude;
+    private String country;
+
 }

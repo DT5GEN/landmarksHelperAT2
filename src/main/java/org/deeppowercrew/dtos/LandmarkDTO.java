@@ -9,8 +9,8 @@ public class LandmarkDTO {
     private Long id;
     private String name;
     private String description;
+    private int rating;
     private String creationDate;
     private String type;
     private LocalityDTO locality;
-    private LandmarkDTO parentLandmark;
 }

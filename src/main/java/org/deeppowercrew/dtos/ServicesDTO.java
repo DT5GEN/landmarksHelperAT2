@@ -8,7 +8,8 @@ import lombok.Setter;
 public class ServicesDTO {
     private Long id;
     private String name;
-    private String description;
     private String provider;
+    private String description;
+    private int rating;
     private String type;
 }

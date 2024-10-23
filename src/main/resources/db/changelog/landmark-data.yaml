@@ -1,0 +1,281 @@
+databaseChangeLog:
+  - changeSet:
+        id: 1
+        author: admin
+        changes:
+          - delete:
+              tableName: landmark
+  - changeSet:
+      id: 2
+      author: admin
+      changes:
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 1 }
+              - column: { name: name, value: "Tokyo Tower" }
+              - column: { name: type, value: "MONUMENT" }
+              - column: { name: description, value: "Iconic landmark in Tokyo offering city views." }
+              - column: { name: rating, valueNumeric: 5 }
+              - column: { name: locality_id, valueNumeric: 1 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 2 }
+              - column: { name: name, value: "Meiji Shrine" }
+              - column: { name: type, value: "RELIGIOUS" }
+              - column: { name: description, value: "Shinto shrine dedicated to Emperor Meiji." }
+              - column: { name: rating, valueNumeric: 4 }
+              - column: { name: locality_id, valueNumeric: 1 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 3 }
+              - column: { name: name, value: "Senso-ji Temple" }
+              - column: { name: type, value: "RELIGIOUS" }
+              - column: { name: description, value: "Tokyo's oldest temple." }
+              - column: { name: rating, valueNumeric: 3 }
+              - column: { name: locality_id, valueNumeric: 1 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 4 }
+              - column: { name: name, value: "Eiffel Tower" }
+              - column: { name: type, value: "MONUMENT" }
+              - column: { name: description, value: "Famous tower in Paris." }
+              - column: { name: rating, valueNumeric: 5 }
+              - column: { name: locality_id, valueNumeric: 2 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 5 }
+              - column: { name: name, value: "Louvre Museum" }
+              - column: { name: type, value: "MUSEUM" }
+              - column: { name: description, value: "Largest art museum in the world." }
+              - column: { name: rating, valueNumeric: 4 }
+              - column: { name: locality_id, valueNumeric: 2 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 6 }
+              - column: { name: name, value: "Notre-Dame Cathedral" }
+              - column: { name: type, value: "RELIGIOUS" }
+              - column: { name: description, value: "Gothic cathedral on the Île de la Cité." }
+              - column: { name: rating, valueNumeric: 3 }
+              - column: { name: locality_id, valueNumeric: 2 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 7 }
+              - column: { name: name, value: "Statue of Liberty" }
+              - column: { name: type, value: "MONUMENT" }
+              - column: { name: description, value: "Iconic statue symbolizing freedom." }
+              - column: { name: rating, valueNumeric: 5 }
+              - column: { name: locality_id, valueNumeric: 3 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 8 }
+              - column: { name: name, value: "Central Park" }
+              - column: { name: type, value: "PARK" }
+              - column: { name: description, value: "Large park in the heart of New York." }
+              - column: { name: rating, valueNumeric: 4 }
+              - column: { name: locality_id, valueNumeric: 3 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 9 }
+              - column: { name: name, value: "Empire State Building" }
+              - column: { name: type, value: "MONUMENT" }
+              - column: { name: description, value: "Famous skyscraper with observatory." }
+              - column: { name: rating, valueNumeric: 3 }
+              - column: { name: locality_id, valueNumeric: 3 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 10 }
+              - column: { name: name, value: "Christ the Redeemer" }
+              - column: { name: type, value: "MONUMENT" }
+              - column: { name: description, value: "Statue of Jesus Christ in Rio." }
+              - column: { name: rating, valueNumeric: 5 }
+              - column: { name: locality_id, valueNumeric: 4 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 11 }
+              - column: { name: name, value: "Sugarloaf Mountain" }
+              - column: { name: type, value: "NATURAL" }
+              - column: { name: description, value: "Famous mountain offering panoramic view." }
+              - column: { name: rating, valueNumeric: 4 }
+              - column: { name: locality_id, valueNumeric: 4 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 12 }
+              - column: { name: name, value: "Copacabana Beach" }
+              - column: { name: type, value: "NATURAL" }
+              - column: { name: description, value: "Popular beach in Rio." }
+              - column: { name: rating, valueNumeric: 3 }
+              - column: { name: locality_id, valueNumeric: 4 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 13 }
+              - column: { name: name, value: "Great Wall of China" }
+              - column: { name: type, value: "HISTORICAL" }
+              - column: { name: description, value: "Ancient wall built for protection." }
+              - column: { name: rating, valueNumeric: 5 }
+              - column: { name: locality_id, valueNumeric: 5 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 14 }
+              - column: { name: name, value: "Forbidden City" }
+              - column: { name: type, value: "HISTORICAL" }
+              - column: { name: description, value: "Imperial palace from the Ming dynasty." }
+              - column: { name: rating, valueNumeric: 4 }
+              - column: { name: locality_id, valueNumeric: 5 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 15 }
+              - column: { name: name, value: "Temple of Heaven" }
+              - column: { name: type, value: "RELIGIOUS" }
+              - column: { name: description, value: "Complex of religious buildings." }
+              - column: { name: rating, valueNumeric: 3 }
+              - column: { name: locality_id, valueNumeric: 5 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 16 }
+              - column: { name: name, value: "Colosseum" }
+              - column: { name: type, value: "HISTORICAL" }
+              - column: { name: description, value: "Ancient Roman amphitheater." }
+              - column: { name: rating, valueNumeric: 5 }
+              - column: { name: locality_id, valueNumeric: 6 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 17 }
+              - column: { name: name, value: "Pantheon" }
+              - column: { name: type, value: "HISTORICAL" }
+              - column: { name: description, value: "Former Roman temple, now a church." }
+              - column: { name: rating, valueNumeric: 4 }
+              - column: { name: locality_id, valueNumeric: 6 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 18 }
+              - column: { name: name, value: "Trevi Fountain" }
+              - column: { name: type, value: "MONUMENT" }
+              - column: { name: description, value: "Famous fountain in Rome." }
+              - column: { name: rating, valueNumeric: 3 }
+              - column: { name: locality_id, valueNumeric: 6 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 19 }
+              - column: { name: name, value: "Pyramids of Giza" }
+              - column: { name: type, value: "HISTORICAL" }
+              - column: { name: description, value: "Ancient pyramids near Cairo." }
+              - column: { name: rating, valueNumeric: 5 }
+              - column: { name: locality_id, valueNumeric: 7 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 20 }
+              - column: { name: name, value: "Sphinx" }
+              - column: { name: type, value: "HISTORICAL" }
+              - column: { name: description, value: "Limestone statue with a lions body." }
+              - column: { name: rating, valueNumeric: 4 }
+              - column: { name: locality_id, valueNumeric: 7 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 21 }
+              - column: { name: name, value: "Egyptian Museum" }
+              - column: { name: type, value: "MUSEUM" }
+              - column: { name: description, value: "Home to ancient Egyptian artifacts." }
+              - column: { name: rating, valueNumeric: 3 }
+              - column: { name: locality_id, valueNumeric: 7 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 22 }
+              - column: { name: name, value: "Sydney Opera House" }
+              - column: { name: type, value: "MONUMENT" }
+              - column: { name: description, value: "Iconic performing arts venue." }
+              - column: { name: rating, valueNumeric: 5 }
+              - column: { name: locality_id, valueNumeric: 8 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 23 }
+              - column: { name: name, value: "Harbour Bridge" }
+              - column: { name: type, value: "MONUMENT" }
+              - column: { name: description, value: "Famous bridge in Sydney." }
+              - column: { name: rating, valueNumeric: 4 }
+              - column: { name: locality_id, valueNumeric: 8 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 24 }
+              - column: { name: name, value: "Bondi Beach" }
+              - column: { name: type, value: "NATURAL" }
+              - column: { name: description, value: "Popular beach in Sydney." }
+              - column: { name: rating, valueNumeric: 3 }
+              - column: { name: locality_id, valueNumeric: 8 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 25 }
+              - column: { name: name, value: "Red Square" }
+              - column: { name: type, value: "HISTORICAL" }
+              - column: { name: description, value: "City square in Moscow." }
+              - column: { name: rating, valueNumeric: 4 }
+              - column: { name: locality_id, valueNumeric: 9 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 26 }
+              - column: { name: name, value: "Kremlin" }
+              - column: { name: type, value: "HISTORICAL" }
+              - column: { name: description, value: "Fortress in the center of Moscow." }
+              - column: { name: rating, valueNumeric: 3 }
+              - column: { name: locality_id, valueNumeric: 9 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 27 }
+              - column: { name: name, value: "St. Basil's Cathedral" }
+              - column: { name: type, value: "RELIGIOUS" }
+              - column: { name: description, value: "Famous cathedral on Red Square." }
+              - column: { name: rating, valueNumeric: 2 }
+              - column: { name: locality_id, valueNumeric: 9 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 28 }
+              - column: { name: name, value: "Acropolis" }
+              - column: { name: type, value: "HISTORICAL" }
+              - column: { name: description, value: "Ancient citadel in Athens." }
+              - column: { name: rating, valueNumeric: 5 }
+              - column: { name: locality_id, valueNumeric: 10 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 29 }
+              - column: { name: name, value: "Parthenon" }
+              - column: { name: type, value: "HISTORICAL" }
+              - column: { name: description, value: "Temple dedicated to the goddess Athena." }
+              - column: { name: rating, valueNumeric: 3 }
+              - column: { name: locality_id, valueNumeric: 10 }
+        - insert:
+            tableName: landmark
+            columns:
+              - column: { name: id, valueNumeric: 30 }
+              - column: { name: name, value: "Temple of Olympian Zeus" }
+              - column: { name: type, value: "RELIGIOUS" }
+              - column: { name: description, value: "Temple in the center of Athens." }
+              - column: { name: rating, valueNumeric: 4 }
+              - column: { name: locality_id, valueNumeric: 10 }

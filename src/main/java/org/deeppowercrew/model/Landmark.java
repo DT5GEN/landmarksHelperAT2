@@ -33,13 +33,5 @@ public class Landmark {
     @JoinColumn(name = "locality_id")
     private Locality locality;
 
-    // Рекурсивная связь: родительский объект Landmark
-    @ManyToOne
-    @JoinColumn(name = "parent_landmark_id")
-    private Landmark parentLandmark;
 
-    // Список дочерних объектов Landmark
-    @OneToMany(mappedBy = "parentLandmark", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Landmark> landmarkList;
 }

@@ -61,7 +61,7 @@ public class LandmarkService {
         dto.setCreationDate(landmark.getCreationDate().toString());
         dto.setType(landmark.getType() != null ? landmark.getType().name() : null);
         dto.setLocality(landmark.getLocality() != null ? convertLocalityToDTO(landmark.getLocality()) : null);
-        dto.setParentLandmark(landmark.getParentLandmark() != null ? convertToDTO(landmark.getParentLandmark()) : null);
+
         return dto;
     }
 
@@ -69,9 +69,8 @@ public class LandmarkService {
         LocalityDTO dto = new LocalityDTO();
         dto.setId(locality.getId());
         dto.setCity(locality.getCity());
-        dto.setRegion(locality.getRegion());
-        dto.setLatitude(locality.getLatitude());
-        dto.setLongitude(locality.getLongitude());
+        dto.setCountry(locality.getCountry());
+
         return dto;
     }
 }

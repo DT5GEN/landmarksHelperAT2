@@ -37,9 +37,8 @@ public class LocalityService {
         if (existingLocality.isPresent()) {
             Locality locality = existingLocality.get();
             locality.setCity(updatedLocality.getCity());
-            locality.setRegion(updatedLocality.getRegion());
-            locality.setLatitude(updatedLocality.getLatitude());
-            locality.setLongitude(updatedLocality.getLongitude());
+            locality.setCountry(updatedLocality.getCountry());
+
             return localityRepository.save(locality);
         } else {
             throw new RuntimeException("Locality not found");
